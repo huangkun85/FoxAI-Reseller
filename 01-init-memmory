@@ -1,0 +1,95 @@
+# Role: 资深全栈软件工程师 & 您的结对编程助手
+
+## 1. 核心目标
+你作为我的高级结对编程助手，旨在帮助我高效地编写、调试、重构和维护代码。你理解并严格遵守我设定的编码规范、技术栈偏好和工作流。
+
+
+
+工作目录是 D:\WorkSpace\FoxAI\FoxAI-Reseller， 包含了Ruoyi系统的前后端源码
+
+你现在的任务：
+
+不是修改代码，
+而是为这个项目建立 AI 长期记忆系统。
+
+目标：
+让后续 AI 不需要重复扫描整个代码库，
+即可快速理解项目。
+
+请执行：
+1. 扫描项目结构
+2. 分析前后端架构
+3. 分析API
+4. 分析数据库结构
+5. 分析业务模块
+6. 分析认证权限
+7. 分析依赖关系
+8. 分析开发规范
+
+然后：
+
+创建 /docs/ai-memory/ 目录。
+
+生成以下文件：
+
+/docs/ai-memory/
+├── 00-project-overview.md
+├── 01-architecture.md
+├── 02-api-map.md   
+├── 03-db-schema.md
+├── 04-business-flow.md
+├── 05-auth-system.md
+├── 06-frontend-structure.md
+├── 07-backend-structure.md
+├── 08-coding-conventions.md
+├── 09-dependency-map.md
+├── 10-known-issues.md
+├── 11-dev-workflow.md
+├── 12-module-index.md
+├── AI_RULES.md
+└── changelog/
+
+要求：
+
+- 使用 markdown
+- 内容结构化
+- 不要泛泛而谈
+- 记录真实代码关系
+- 标记不确定部分
+- 后续持续维护这些文件
+
+
+# Role
+你是一位精通 RuoYi（若依）前后端架构的资深系统架构师。现在你的核心任务是：为位于 `D:\WorkSpace\Fox-Reseller` 的项目（基于 RuoYi 架构开发的 Token 中转站分销系统）建立【AI 长期记忆系统】，存放在 `/docs/ai-memory/` 目录下。
+
+---
+
+## 一、 核心执行原则（若依专项约束）
+1. **区分原生与业务**：RuoYi 自带了大量的系统管理模块（ruoyi-admin, sys-user, sys-menu, quartz 等）。在扫描时，必须清晰区分【RuoYi 原生底层脚手架】与【Fox-Reseller（分销商/中转站）核心业务模块】。
+2. **拒绝敷衍，直击源码**：禁止泛泛而谈。记录具体的 Java 包名、类名、MyBatis XML 路径、前端 Vue 组件路径、具体的 SQL 表名。
+3. **分阶段交付（关键）**：由于 RuoYi 代码量巨大，为防止大模型输出截断，我们将分 3 个阶段进行初始化。**当前请只执行【第一阶段】。**
+
+---
+
+## 二、 阶段性流水线计划
+
+### 📥 【当前执行】第一阶段：骨架扫描与全局概览
+
+请立即扫描项目，并首先创建和生成以下 **4 个全局骨架文件**：
+
+1. `/docs/ai-memory/00-project-overview.md` (项目定位、Fox-Reseller 核心功能概述、业务边界)
+2. `/docs/ai-memory/01-architecture.md` (前后端整体技术栈、若依版本类型[分离版/微服务版]、多模块 Maven 依赖拓扑或目录结构关系)
+3. `/docs/ai-memory/12-module-index.md` (核心模块索引：哪些是 RuoYi 系统模块，哪些是分销商核心业务代码，建立文件映射索引)
+4. `/docs/ai-memory/AI_RULES.md` (AI 开发此项目的最高行为准则，包含高精度计算、防刷、先设计后代码等红线)
+
+**👉 第一阶段输出要求**：请直接输出上述 4 个文件的完整 Markdown 内容。完成后请挂起并提示我：“第一阶段骨架已建立，请发送指令进入第二阶段（深挖 API 与数据库）”。
+
+---
+
+### ⏳ 第二阶段：数据契约与权限核心（待第一阶段完成后启动）
+（本阶段将专注生成：`03-db-schema.md` [聚焦 affiliate 相关表与核心表], `02-api-map.md`, `05-auth-system` 
+
+### ⏳ 第三阶段：前端、业务流与规范闭环（待第二阶段完成后启动）
+（本阶段将完成剩余文件：`04-business-flow.md`, `06-frontend-structure.md`, `07-backend-structure.md`, `08-coding-conventions.md`, `09-dependency-map.md`, `10-known-issues.md`, `11-dev-workflow.md` 及 changelog 初始化）
+
+最后在workspace下生成 claude.md文件
